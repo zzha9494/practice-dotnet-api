@@ -1,0 +1,24 @@
+# Visual Studio hidden files
+**/.vs*
+
+# Temporary files
+**/bin/
+**/obj/
+
+# # User secrets file
+# **/.secrets
+
+# # Tests results
+# **/TestResults/
+
+# # Build artifacts
+# **/artifacts/
+
+# # NuGet packages folder
+# **/packages/
+
+# # Analyzer log files
+# **/.*.log
+
+# # StyleCop reports
+# **/stylecop*.xml
