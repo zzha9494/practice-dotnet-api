@@ -2,12 +2,14 @@ services:
   server:
     build:
       context: .
-      target: development
+      target: final
     ports:
       - 8080:8080
     depends_on:
       - db
         # condition: service_healthy
+    environment:
+      - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=False
     develop:
       watch:
         - action: rebuild
@@ -21,8 +23,8 @@ services:
     volumes:
       - mssql-data:/var/opt/mssql
     environment:
-      ACCEPT_EULA: Y
-      SA_PASSWORD: Password1
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password1
       # SA_PASSWORD: /run/secrets/db-password
     ports:
       - "1433:1433"
@@ -39,6 +41,7 @@ services:
 
 volumes:
   mssql-data:
+    external: true
 # secrets:
 #   db-password:
 #     file: password.txt
