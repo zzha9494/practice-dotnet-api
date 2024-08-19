@@ -16,4 +16,4 @@ FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS develo
 COPY . /source
 WORKDIR /source
 CMD dotnet run --launch-profile docker
-# EXPOSE 8080
+EXPOSE 8080
